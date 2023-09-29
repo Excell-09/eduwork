@@ -14,7 +14,7 @@ const TopComponent = () => {
 
 export default function Posts() {
   return (
-    <section className="space-y-5 mt-5">
+    <section className="space-y-4 mt-2 max-h-[120vh] overflow-y-auto rounded-2xl no-scrollbar">
       <Post TopComponent={TopComponent}/>
       <Post />
       <Post />
