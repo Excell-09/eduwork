@@ -23,10 +23,8 @@ const RecomedationList = () => {
     <div className="flex items-start gap-3 mb-4">
       <img src={userRecomendation} alt="user rekomendation" />
       <div>
-        <h6>PT. Buana</h6>
-        <p className="text-sm text-gray-600 my-1">
-          Company | Financial Service
-        </p>
+        <h6 className="font-medium mb-1">PT. Buana</h6>
+        <p className="text-sm text-gray-600 mb-2">Company | Financial Service</p>
         <Button>
           Follow <AiOutlinePlus />
         </Button>
@@ -48,17 +46,17 @@ const SideBarLeft = () => {
 
   return (
     <aside className="max-w-[19rem] flex-1 hidden lg:block">
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden font-medium">
         {SIDEBARLINK.map((item, i) => (
           <NavLink
             key={i}
-            className={`text-xl flex gap-2 items-center p-4 ${
+            className={`text-xl flex gap-3 items-center p-4 ${
               location.pathname === item.to
                 ? "text-blue-400 bg-sky-50"
                 : "text-gray-600"
             }`}
             to={item.to}>
-            <item.Icon /> {item.display}
+            <item.Icon className="text-2xl" /> {item.display}
           </NavLink>
         ))}
       </div>
@@ -78,14 +76,19 @@ const SideBarLeft = () => {
   );
 };
 
-const DateItem = ({ isActive }) => {
+const DateItem = ({ isActive, day, date }) => {
   return (
     <div
       className={`p-2 rounded-lg ${
-        isActive ? "bg-blue-500 text-white" : "bg-blue-50 text-black"
+        isActive ? "bg-blue-500 text-white" : "bg-blue-50"
       }`}>
-      <h5 className="text-xs text-center">Mon</h5>
-      <h6 className="font-medium text-lg text-center">24</h6>
+      <h5
+        className={`text-xs text-center ${
+          isActive ? "text-white" : "text-gray-500"
+        }`}>
+        {day}
+      </h5>
+      <h6 className="font-medium text-lg text-center">{date}</h6>
     </div>
   );
 };
@@ -106,7 +109,7 @@ const CourseItem = () => {
 const EventListItem = () => {
   return (
     <div className="flex items-center gap-2">
-      <div className="border-r-2 border-r-blue-500 p-3">
+      <div className="border-r-4 border-r-blue-500 p-3">
         <h5 className="text-xs text-gray-500 ">Tue</h5>
         <h6 className="text-lg">25</h6>
       </div>
@@ -133,7 +136,8 @@ const EClassListItem = () => {
 
 const SideBarRight = () => {
   return (
-    <aside className="max-w-[22rem] flex-1 hidden lg:block">
+    <aside className="max-w-[23rem] flex-1 hidden lg:block">
+      {/* Calender */}
       <div className="bg-white rounded-2xl p-4 shadow-lg mb-5">
         <div className="flex justify-between items-center">
           <h6 className="text-lg font-medium">July 2023</h6>
@@ -144,14 +148,14 @@ const SideBarRight = () => {
         </div>
 
         <div className="mt-5">
-          <div className="grid grid-cols-7 gap-2 overflow-hidden">
-            <DateItem isActive={true} />
-            <DateItem />
-            <DateItem />
-            <DateItem />
-            <DateItem />
-            <DateItem />
-            <DateItem />
+          <div className="grid grid-cols-7 gap-1 overflow-hidden">
+            <DateItem date={24} day={"Mon"} isActive={true} />
+            <DateItem date={25} day={"Tue"} />
+            <DateItem date={26} day={"Wed"} />
+            <DateItem date={27} day={"Thu"} />
+            <DateItem date={28} day={"Fri"} />
+            <DateItem date={29} day={"Sat"} />
+            <DateItem date={30} day={"Sun"} />
           </div>
         </div>
 
@@ -167,11 +171,12 @@ const SideBarRight = () => {
         </Button>
       </div>
 
+      {/* upComming */}
+
       <div className="bg-white rounded-2xl p-4 shadow-lg mb-5">
         <h6 className="text-xl font-medium">Upcoming Event</h6>
 
         <hr className="border-t-2 mt-3 border-t-gray-400" />
-
 
         <div className="mt-5 space-y-6">
           <EventListItem />
@@ -184,11 +189,12 @@ const SideBarRight = () => {
         </Button>
       </div>
 
+      {/* E class */}
+
       <div className="bg-white rounded-2xl p-4 shadow-lg">
         <h6 className="text-xl font-medium">E-Class</h6>
 
         <hr className="border-t-2 mt-3 border-t-gray-400" />
-
 
         <div className="mt-5 space-y-6">
           <EClassListItem />

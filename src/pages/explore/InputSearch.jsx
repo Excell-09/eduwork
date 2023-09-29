@@ -3,7 +3,7 @@ import { BsSearch } from "react-icons/bs";
 
 export default function InputSearch() {
   return (
-    <div className="bg-white flex gap-4 p-4 rounded-xl shadow">
+    <div className="bg-white items-center flex gap-3 p-3 rounded-xl shadow">
       <BsSearch className="text-xl text-gray-500" />
       <input
         type="text"

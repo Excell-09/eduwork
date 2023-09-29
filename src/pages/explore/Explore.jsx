@@ -1,12 +1,14 @@
 import React from "react";
 import InputSearch from "./InputSearch";
-import History from "./History";
+import Histories from "./Histories";
+import Posts from "./Posts";
 
 export default function Explore() {
   return (
     <section className="flex-1">
       <InputSearch />
-      <History />
+      <Histories />
+      <Posts/>
     </section>
   );
 }
