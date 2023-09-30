@@ -5,7 +5,7 @@ import Posts from "./Posts";
 
 export default function Explore() {
   return (
-    <section className="flex-1">
+    <section className="flex-1 w-full">
       <InputSearch />
       <Histories />
       <Posts/>

@@ -4,7 +4,7 @@ import Posts from './Posts'
 
 export default function Home() {
   return (
-    <section className='flex-1'>
+    <section className='flex-1 w-full'>
       <CreatePost/>
       <Posts/>
     </section>

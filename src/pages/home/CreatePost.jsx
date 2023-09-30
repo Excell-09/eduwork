@@ -1,9 +1,8 @@
 import React from "react";
 import { userImage } from "../../assets/dummy";
-import { MdPhotoCameraBack,MdOutlineVideoCameraBack } from "react-icons/md";
-import { AiOutlineFolder } from "react-icons/ai"
-import {BsBag,BsCalendarDate} from "react-icons/bs"
-
+import { MdPhotoCameraBack, MdOutlineVideoCameraBack } from "react-icons/md";
+import { AiOutlineFolder } from "react-icons/ai";
+import { BsBag, BsCalendarDate } from "react-icons/bs";
 
 const ActionIcon = ({ display, Icon, classNameIcon }) => {
   return (
@@ -19,7 +18,10 @@ export default function CreatePost() {
     <section className="p-5 rounded-xl shadow-md bg-white">
       <div className="flex gap-4 ">
         <div>
-          <img className="w-[3.5rem] rounded-full" src={userImage} />
+          <img
+            className="w-[3rem] lg:w-[3.5rem] rounded-full"
+            src={userImage}
+          />
         </div>
         <input
           type="text"
@@ -28,7 +30,7 @@ export default function CreatePost() {
         />
       </div>
 
-      <div className="mt-5 flex justify-between">
+      <div className="mt-5 flex justify-between overflow-x-auto gap-5 no-scrollbar">
         <ActionIcon
           display={"Foto"}
           Icon={MdPhotoCameraBack}
