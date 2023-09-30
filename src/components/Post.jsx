@@ -21,7 +21,7 @@ export default function Post({ TopComponent }) {
       <div className="flex items-center justify-between">
         <div className="flex gap-3">
           <div>
-            <img src={userPostImage} className="rounded-full w-[4rem]" />
+            <img src={userPostImage} className="rounded-full w-[3rem] lg:w-[4rem]" />
           </div>
           <div>
             <h6 className="font-medium">Pelita Nur Najmina</h6>
